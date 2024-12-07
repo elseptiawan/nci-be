@@ -14,8 +14,16 @@ class TransactionController extends Controller
     {
         $itemsPerPage = $request->input('items_per_page', 10); // Default to 10 items per page
         $page = $request->input('page', 1); // Default to page 1
+        $search = $request->input('search', 1);
 
-        $transaction = Transaction::latest()->with(['product', 'warehouse', 'user'])->paginate($itemsPerPage, ['*'], 'page', $page);
+        $transaction = Transaction::latest()
+                    ->when($search, function($query) use ($search) {
+                        $query->whereHas('product', function ($q) use ($search) {
+                            $q->where('name', 'like', '%'.$search.'%');
+                        });
+                    })
+                    ->with(['product', 'warehouse', 'user'])
+                    ->paginate($itemsPerPage, ['*'], 'page', $page);
 
         return ApiResponseHelper::success($transaction, 'Transactions retrieved successfully');
     }

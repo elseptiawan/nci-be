@@ -8,6 +8,7 @@ use App\Http\Controllers\{
     WarehouseController,
     TransactionController,
     StockController,
+    UserController,
 };
 
 /*
@@ -32,4 +33,5 @@ Route::middleware('auth_api')->group(function () {
         Route::get('/', [TransactionController::class, 'index']);
     });
     Route::get('/stocks', [StockController::class, 'index']);
+    Route::get('/users', [UserController::class, 'index']);
 });

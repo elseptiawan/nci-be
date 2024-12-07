@@ -8,7 +8,6 @@ Ensure you have the following installed on your system:
 
 - **PHP**: Version 8.1 or later
 - **Composer**: Dependency Manager for PHP
-- **Node.js**: For frontend assets (optional, if applicable)
 - **MySQL** or another supported database
 - **Git**: For cloning the repository
 
@@ -17,8 +16,8 @@ Ensure you have the following installed on your system:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/elseptiawan/nci-be
+cd nci-be
 ```
 
 ### 2. Install Dependencies
@@ -27,12 +26,6 @@ Run the following command to install PHP dependencies:
 
 ```bash
 composer install
-```
-
-If the project uses Node.js for frontend assets, install JavaScript dependencies:
-
-```bash
-npm install
 ```
 
 ### 3. Configure Environment Variables

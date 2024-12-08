@@ -86,6 +86,8 @@ Access api at:
 http://localhost:8000/api
 ```
 
+### API Documentation
+https://documenter.getpostman.com/view/25970017/2sAYBd67NF
 ---
 
 Thank you for using this Laravel application!
